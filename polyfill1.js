@@ -25,3 +25,5 @@ Array.prototype.myJoin = function(sep=",")
     }
 }
 console.log([1,2,3].myJoin(':'));
+
+
