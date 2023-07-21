@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Your geolocation:</p>
+    <p id="info">Waiting...</p>
+
+
+    <script>
+        window.onload = function(){
+            navigator.geolocation.getCurrentPosition(success, fail);
+        }
+
+        function success(position) {
+            document.getElementById("info").innerText = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+        }
+
+        function fail(e)
+        {
+            document.getElementById("info").innerText = "Unable to check your geolocation. Check developer console for error info."
+            console.error(e);
+        }
+
+
+    </script>
+</body>
+</html>
