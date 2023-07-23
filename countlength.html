@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id=""> <p>Length: <span id="count">0</span></p>
+    <script>
+        let input = document.querySelector("input");
+        let count = document.querySelector("#count");
+        input.addEventListener('input', function(e){
+            count.textContent = input.value.length;
+        });
+    </script>
+</body>
+</html>
