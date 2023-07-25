@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer {
+            position: fixed;
+            background-color: aquamarine;
+            display: flex;
+    justify-content: center;
+    align-items: center;
+            width: 100%;
+            text-align: center;
+            height: 10%;
+            bottom: 0;
+        }
+
+        footer > p {
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptate placeat dolorem nulla, quisquam cumque porro natus inventore ab et accusamus modi velit quae officiis accusantium exercitationem facilis, quas molestias!</p>
+    <footer>
+        <p>&copyCopyright <span id="year">2020</span> KJ</p>
+    </footer>
+
+    <script>
+        async function getYear() {
+            const response = await fetch("http://localhost/frontendplayground/getyear.php");
+            const year = await response.json();
+            return year.year;
+          }
+        let year = document.querySelector("#year");
+        
+          (async () => {
+            let response = await getYear();
+            
+            year.textContent = response;
+            })();
+            
+        
+    </script>
+</body>
+</html>
