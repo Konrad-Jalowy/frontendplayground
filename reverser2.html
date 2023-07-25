@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+     
+            <label for="ipt">Write here</label>
+            <input type="text" name="ipt" id="ipt">
+            <label for="read">Your message:</label>
+            <input type="text" name="read" id="read" readonly>
+            <button id="btn">Copy</button>
+      <script>
+        let ipt = document.querySelector("#ipt");
+        let read = document.querySelector("#read");
+        let btn = document.querySelector("#btn");
+
+        ipt.addEventListener('input', function(e){
+            read.value = ipt.value.split("").reverse().join("");
+        });
+
+        btn.addEventListener('click', async function(e){
+            let text = ipt.value.split("").reverse().join("");
+            try {
+                await navigator.clipboard.writeText(text);
+                console.log('Content copied to clipboard');
+              } catch (err) {
+                console.error('Failed to copy: ', err);
+              }
+        });
+      </script>
+    
+</body>
+</html>
