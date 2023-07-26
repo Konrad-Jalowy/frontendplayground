@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Number telefonu: <span id="tel">48123123123</span></p>
+    <button id="btn">Zmień</button>
+    <script>
+        let btn = document.querySelector("#btn");
+        let p = document.querySelector("p");
+        let span = document.querySelector("#tel");
+        btn.addEventListener('click', function(e){
+            p.innerHTML = `<a href="tel:${span.textContent}">Zadzwoń do mnie</a>`;
+            btn.setAttribute("disabled", "true");
+        });
+
+
+    </script>
+</body>
+</html>
