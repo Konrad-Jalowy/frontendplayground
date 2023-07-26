@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Languages:</p>
+    <ol id="langList">
+        <li>Python</li>
+        <li>Javascript</li>
+        <li>Java</li>
+        <li>C++</li>
+        <li>PHP</li>
+    </ol>
+    <button id="btn">Reverse</button>
+    <script>
+        let langList = document.querySelector("#langList");
+        let btn = document.querySelector("#btn");
+        btn.addEventListener('click', function(e){
+            let arr = new Array();
+            let items = langList.getElementsByTagName("li");
+            for (let i = items.length - 1; i >= 0; i--) {
+                arr.push(items[i]);
+              }
+              langList.replaceChildren(...arr);
+        });
+    </script>
+
+</body>
+</html>
