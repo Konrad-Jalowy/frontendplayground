@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .square {
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="square" id="square"></div>
+    <button id="btn">Hide/Show</button>
+
+
+    <script>
+        let btn = document.querySelector("#btn");
+        let square = document.querySelector("#square");
+        btn.addEventListener('click', function(e){
+            square.classList.toggle("hidden");
+        });
+
+    </script>
+</body>
+</html>
