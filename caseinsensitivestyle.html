@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [data-text *= "bold"] {
+            font-weight: bold;
+        }
+
+        [data-text *= "uppercase"] {
+            text-transform: uppercase;
+        }
+        [data-text *= "capitalize"] {
+            text-transform: capitalize;
+        }
+
+        [data-text *= "italics"] {
+            font-style: italic;
+        }
+
+        [data-color = "green" i] {
+            background-color: greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 data-text="bold uppercase">My heading</h1>
+    <p data-text="italics bold capitalize" data-color="Green">lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad esse ipsa beatae, quia accusantium soluta aliquam nobis sed fugit, a quisquam laborum suscipit doloremque quas repudiandae! Accusantium, eos natus!</p>
+</body>
+</html>
