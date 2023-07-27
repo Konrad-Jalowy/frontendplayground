@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 15%;
+            width: 100%;
+            background-color: aquamarine;
+        }
+
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .2s ease-in-out;
+        }
+
+        h1:hover {
+            transform: scale(1.4) translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="bar">
+        <h1>Hello!</h1>
+    </div>
+</body>
+</html>
