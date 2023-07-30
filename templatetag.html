@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    </div>
+    <template id="header">
+        <h1>Hello World</h1>
+    </template>
+    <button id="btn">Show Template</button>
+
+    <script>
+        if("content" in document.createElement("template")) {
+            let btn = document.querySelector("#btn");
+            let template = document.querySelector("#header");
+            let container = document.querySelector(".container");
+            btn.addEventListener("click", function(e){
+                let clone = template.content.cloneNode(true);
+                container.appendChild(clone);
+                template.innerHTML = '';
+                btn.setAttribute('disabled', 'true');s
+            });
+        } else {
+            alert("Your browser does not support template element!");
+        }
+    </script>
+</body>
+</html>
