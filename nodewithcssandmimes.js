@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const http = require("http");
 
+//mapping file extensions and content-type header values makes things easier
 const MIME_TYPES = {
     ".html": "text/html",
     ".css": "text/css",
@@ -16,6 +17,7 @@ const server = http.createServer(function(req, res) {
     if(req.url === "/" || req.url === "/index.html") {
         fileName = "index.html";
     } else {
+        //you hit this point when your browser try to dowloand image or styles
         //converts /style.css to style.css and so on...
         fileName = req.url.slice(1);
     }
@@ -28,7 +30,7 @@ const server = http.createServer(function(req, res) {
         res.end();
 
     });
-
+    //takes extension and uses it to get correct header value
     res.writeHead(200, {"Content-Type": MIME_TYPES[path.extname(fileName)]});
 
     file.pipe(res);
