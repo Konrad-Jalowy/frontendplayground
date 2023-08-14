@@ -16,6 +16,7 @@ const server = http.createServer(function(req, res) {
     if(req.url === "/" || req.url === "/index.html") {
         fileName = "index.html";
     } else {
+        //converts /style.css to style.css and so on...
         fileName = req.url.slice(1);
     }
 
